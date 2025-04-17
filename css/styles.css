@@ -2,6 +2,14 @@
     display: none;
 }
 
+html {
+    box-sizing: border-box;
+}
+
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+
 body {
     font-family: "Roboto", sans-serif;
     font-size: 16px;
@@ -56,9 +64,12 @@ img {
 /* common */
 
 .container {
-    max-width: 320px;
-    padding: 0 16px;
-    margin: 0 auto;
+    width: 100%;
+    padding-left: 16px;
+    padding-right: 16px;
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
 }
 
 @media screen and (min-width: 768px) {
@@ -70,18 +81,15 @@ img {
 @media screen and (min-width: 1158px) {
     .container {
     max-width: 1158px;
-    padding: 0 15px;
+    padding-left: 15px;
+    padding-right: 15px;
     }
 }
 
 /* header */
 
-/* .page-header {
-    border-bottom: 1px solid #e7e9fc;
-    box-shadow: 0 1px 6px 0 rgba(46, 47, 66, 0.08), 0 1px 1px 0 rgba(46, 47, 66, 0.16), 0 2px 1px 0 rgba(46, 47, 66, 0.08);
-} */
-
 .header-container {
+    max-width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -127,12 +135,11 @@ img {
 @media screen and (min-width: 768px) {
     .page-header {
         align-items: center;
-        max-width: 768px;
         margin: auto;
     }
 
     .header-container {
-        margin: 0;
+        padding: 0;
     }
 
     .burger-btn {
@@ -140,7 +147,6 @@ img {
     }
 
     .header-nav {
-        /* display: none; */
         display: flex;
         align-items: center;
     }
@@ -195,7 +201,6 @@ img {
         display: flex;
         flex-direction: column;
         gap: 12px;
-        /* margin-left: 112px; */
     }
 
     .adress-link {
@@ -217,20 +222,12 @@ img {
 
 @media screen and (min-width: 1158px) {
     .header-container {
-        max-width: 1158px;
         margin: 0 auto;
         padding: 0 15px;
-        align-items: center;
         justify-content: space-between;
     }
 
-    .page-header {
-        max-width: 1158px;
-        margin: 0 auto;
-    }
-
     .header-nav {
-        
         margin-right: 322px;
     }
 
@@ -267,6 +264,8 @@ img {
     left: 0;
     width: 100%;
     height: 100%;
+    max-width: 100vw; 
+    overflow-x: hidden;
     background-color: #fff;
     opacity: 10;
     visibility: hidden;
@@ -327,7 +326,9 @@ img {
 .mobile-menu-nav-list {
     display: block;
     color: #2e2f42;
-    max-width: 151px;
+    width: 151px;;
+    max-width: 100%;
+    overflow-wrap: break-word;
 }
 
 .menu-nav-item:not(:last-child) {
@@ -361,6 +362,13 @@ img {
     gap: 24px;
     width: 193px;
     height: 72px;
+    max-width: 100%;
+    overflow-wrap: break-word;
+    word-break: break-word; 
+}
+
+.mobile-menu-adress-item {
+    max-width: 100%;
 }
 
 .mobile-menu-adress-link {
@@ -384,17 +392,13 @@ img {
     max-width: 280px;
 }
 
-.icon-social {
-    color: #ffffff; /* зробити білою! */
-}
-
 .mobile-menu-social-links {
     display: flex;
+    flex-wrap: wrap; 
     justify-content: space-between;
     align-items: center;
     gap: 40px;
 }
-
 
 .mobile-menu-social-item .link {
     display: flex;
@@ -428,11 +432,8 @@ img {
 /* --------------------HERO------------------- */
 
 .hero {
-    background-color: #2e2f42;
-    margin-left: auto;
-    margin-right: auto;
-    max-width: 320px;
     min-height: 432px;
+    background-color: #2e2f42;
     background-image: linear-gradient(to bottom, rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)), 
     url(../images/hero/hero-mob-min.jpg);
     background-repeat: no-repeat;
@@ -492,7 +493,6 @@ img {
 
 @media screen and (min-width: 768px) {
     .hero {
-        max-width: 768px;
         background-image: linear-gradient(to bottom, rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)), 
 url(../images/hero/hero-tab-min.jpg);
     }
@@ -521,7 +521,6 @@ url(../images/hero/hero-tab-min.jpg);
     .hero {
         padding-top: 188px;
         padding-bottom: 188px;
-        max-width: 1158px;
         background-image: linear-gradient(to bottom, rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)), 
 url(../images/hero/hero-desk-min.jpg);
     }
@@ -543,8 +542,6 @@ url(../images/hero/hero-desk-min.jpg);
 
 /* -----------------FEATURES--------------- */
 .features {
-    max-width: 320px;
-    margin: auto;
     padding: 96px 0;
 }
 
@@ -552,8 +549,11 @@ url(../images/hero/hero-desk-min.jpg);
     display: flex;
     flex-wrap: wrap;
     gap: 72px;
-    max-width: 288px;
     padding: 0 16px;
+
+    width: 100%;  
+    box-sizing: border-box;      
+    
 }
 
 .icons {
@@ -567,6 +567,9 @@ url(../images/hero/hero-desk-min.jpg);
     text-align: center;
     color: #2e2f42;
     width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    word-break: break-word;
 }
 
 .features-item {
@@ -576,7 +579,7 @@ url(../images/hero/hero-desk-min.jpg);
     justify-content: flex-start;
     flex-direction: column;
     gap: 8px;
-    max-width: 288px;
+    width: 100%; 
 }
 
 .features-item-text {
@@ -588,10 +591,6 @@ url(../images/hero/hero-desk-min.jpg);
 }
 
 @media screen and (min-width: 768px) {
-    .features {
-        max-width: 768px;
-    }
-    
     .features-list {
         gap: 24px;
         max-width: 736px;
@@ -613,7 +612,6 @@ url(../images/hero/hero-desk-min.jpg);
 
 @media screen and (min-width: 1158px) {
     .features {
-        max-width: 1128px;
         padding: 120px 0;
     }
         
@@ -661,11 +659,10 @@ url(../images/hero/hero-desk-min.jpg);
     text-align: center;
     padding: 32px 16px;
     align-items: center;
+    overflow: visible;
 }
 
 .team {
-    max-width: 320px;
-    margin: auto;
     background-color: #F4F4FD;
     padding: 96px 0;
     margin-top: 81px;
@@ -688,10 +685,12 @@ url(../images/hero/hero-desk-min.jpg);
     display: flex;
     flex-direction: column;
     align-items: center;
-    max-width: 264px;
     gap: 72px;
     margin-left: auto;
     margin-right: auto; 
+    width: 100%;
+    padding: 0 16px;
+    box-sizing: border-box;
 }
 
 .team-item {
@@ -700,9 +699,22 @@ url(../images/hero/hero-desk-min.jpg);
     margin: 0 auto; 
     box-shadow: 0 2px 1px 0 rgba(46, 47, 66, 0.08),
                 0 1px 1px 0 rgba(46, 47, 66, 0.16),
-                0 1px 6px 0 rgba(46, 47, 66, 0.08);          
+                0 1px 6px 0 rgba(46, 47, 66, 0.08);
+                
+                
+    width: 100%;
+    max-width: 100%;            
 }
     
+
+.team-image {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    display: block;
+}
+
+
 .team-subtitle {
     font-weight: 500;
     font-size: 20px;
@@ -729,9 +741,34 @@ url(../images/hero/hero-desk-min.jpg);
 .social-links-team {
     display: flex;
     align-items: center;
-    justify-content: center;
     gap: 24px;
+    justify-content: center;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    width: 232px;
+    margin-left: auto;
+    margin-right: auto;
 }
+
+
+@media screen and (max-width: 319px) {
+    .social-links-team {
+        width: auto;          
+        max-width: 100%;      
+    }
+}
+
+
+.social-links-team {
+    -ms-overflow-style: none;  
+    scrollbar-width: none;    
+}
+
+.social-links-team::-webkit-scrollbar {
+    display: none;            
+}
+
+
 
 .social-links-team .link {
     display: flex;
@@ -754,7 +791,6 @@ url(../images/hero/hero-desk-min.jpg);
 
 @media screen and (min-width: 768px) {
     .team {
-        max-width: 768px;
         margin: auto;
     }
 
@@ -776,7 +812,6 @@ url(../images/hero/hero-desk-min.jpg);
 @media screen and (min-width: 1158px) {
     .team {
         padding: 120px 0;
-        max-width: 1128px;
     }
     
     .team-list {
@@ -798,9 +833,7 @@ url(../images/hero/hero-desk-min.jpg);
 /* ----------------PORTFOLIO--------------- */
 
 .portfolio-item-container {
-    
     border: none;
-    
     padding: 32px 16px;
     max-width: 288px;
     max-height: 120px;
@@ -811,12 +844,9 @@ url(../images/hero/hero-desk-min.jpg);
     }
 
 .portfolio {
-    max-width: 320px;
-    margin: auto;
     background-color: #fff;
     padding: 96px 0;
-    margin-left: auto;
-    margin-right: auto;
+
 }
 
 .portfolio-title {
@@ -833,9 +863,11 @@ url(../images/hero/hero-desk-min.jpg);
     display: flex;
     flex-wrap: wrap;
     gap: 48px 16px;
-    box-shadow: 0 2px 1px 0 rgba(46, 47, 66, 0.08), 0 1px 1px 0 rgba(46, 47, 66, 0.16), 0 1px 6px 0 rgba(46, 47, 66, 0.08);
-    background-color: #fff;
     transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+    width: 100%;
+    padding: 0 16px;
+    box-sizing: border-box;
 }
 
 .portfolio-item {
@@ -864,8 +896,9 @@ url(../images/hero/hero-desk-min.jpg);
 }
 
 .portfolio-image {
-    max-width: 288px;
-    max-height: 280px;
+    width: 100%;
+    height: auto;
+    max-width: 100%;
     object-fit: cover;
     display: block;
 }
@@ -903,18 +936,6 @@ url(../images/hero/hero-desk-min.jpg);
 }
 
 @media screen and (min-width: 768px) {
-    .portfolio-item-container {
-        max-width: 736px;
-        }
-
-    .container{
-        padding: 0;
-    }
-
-    .portfolio {
-        max-width: 736px;
-    }
-
     .portfolio-list {
         flex-direction: row;
         gap: 72px 24px;
@@ -941,7 +962,6 @@ url(../images/hero/hero-desk-min.jpg);
     }
 
     .portfolio {
-        max-width: 1128px;
         padding: 120px 0 120px 0;
     }
 
@@ -969,9 +989,6 @@ url(../images/hero/hero-desk-min.jpg);
 
 .page-footer {
     background-color: #2e2f42;
-    max-width: 320px;
-    margin: auto;
-    max-height: 664px;
     padding: 96px 16px;
 }
 
@@ -982,12 +999,13 @@ url(../images/hero/hero-desk-min.jpg);
 .footer-content {
     margin-bottom: 72px;
 }
+
 .footer-logo {
     text-align: center;
     display: block;
     margin-bottom: 16px;
 }
-        
+
 .footer-logo .logo-part {
     color: #f4f4fd;
 }
@@ -1123,7 +1141,6 @@ url(../images/hero/hero-desk-min.jpg);
 
 @media screen and (min-width: 768px) {
     .page-footer {
-        min-width: 768px;
         max-height: 456px;
         margin: 0 auto;
         padding: 96px 108px 96px;
@@ -1146,9 +1163,10 @@ url(../images/hero/hero-desk-min.jpg);
     .footer-form {
         display: flex;
         gap: 24px;
-        max-width: 264px;
         flex-direction: row;
         align-items: center;
+        flex-wrap: wrap;
+        justify-content: flex-start;
     }
 
     .footer-logo {
@@ -1177,7 +1195,11 @@ url(../images/hero/hero-desk-min.jpg);
         align-items: start;
         margin: auto 0;
         text-align: left;
-        max-width: 453px;
+        
+        width: 453px;
+
+        max-width: 100%;
+        flex: 1 1 auto;
     }
 
     .footer-form-icon {
@@ -1185,7 +1207,8 @@ url(../images/hero/hero-desk-min.jpg);
     }
 
     .footer-input {
-        max-width: 264px;
+        max-width: 100%;
+        width: 264px;
         margin-bottom: 0px;
     }
 }
@@ -1193,7 +1216,6 @@ url(../images/hero/hero-desk-min.jpg);
 @media screen and (min-width: 1158px) {
     .page-footer {
         max-height: 312px;
-        max-width: 1128px;
         padding: 100px 0;
     }
 
@@ -1225,6 +1247,7 @@ url(../images/hero/hero-desk-min.jpg);
         max-width: 453px;
         flex-direction: row;
         align-items: center;
+        flex-wrap: nowrap;
     }
 
     .footer-form-text {
@@ -1412,6 +1435,8 @@ url(../images/hero/hero-desk-min.jpg);
 
 .modal-checkbox {
     display: inline-flex;
+    align-items: center;
+    justify-content: center;
     line-height: 1.33;
     text-decoration: underline;
     text-decoration-skip-ink: none;
@@ -1421,27 +1446,34 @@ url(../images/hero/hero-desk-min.jpg);
     width: 16px;
     height: 16px;
     margin-right: 8px;
-    align-items: center;
-    justify-content: center;
     fill: transparent;
     transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1), background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
     border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    flex-shrink: 0;
+    pointer-events: auto;
+
 }
 
-.modal-check:checked + .modal-check-text span {
-    background-color: #404bbf;;
+
+.modal-check:checked + .modal-checkbox {
+    background-color: #404bbf;
     fill: #f4f4fd;
     border: none;
 }
 
-.modal-check:checked + .modal-check-text span {
-    background-color: #404bbf;;
-    fill: #f4f4fd;
-    border: none;
+.modal-checkbox-icon {
+    pointer-events: none;
+}
+
+.modal-check-description {
+    pointer-events: auto;
 }
 
 .modal-check-text {
+    display: flex;
     align-items: center;
+    flex-wrap: nowrap;
+    cursor: pointer;
     font-size: 12px;
     line-height: 1.17;
     letter-spacing: 0.04em;
