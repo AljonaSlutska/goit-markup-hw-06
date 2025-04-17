@@ -139,7 +139,8 @@ img {
     }
 
     .header-container {
-        padding: 0;
+        padding-left: 16px;
+        padding-right: 16px;
     }
 
     .burger-btn {
@@ -149,6 +150,8 @@ img {
     .header-nav {
         display: flex;
         align-items: center;
+
+        flex-grow: 1;
     }
 
     .nav-list {
@@ -156,11 +159,12 @@ img {
         align-items: center;
         gap: 40px;
         color: #404bbf;
+        margin-right: auto;
     }
 
     .header-logo {
         padding: 24px 0;
-        margin-right: 121px;
+        margin-right: auto;
     }
 
     .nav-link {
@@ -194,7 +198,7 @@ img {
     .adress {
         font-style: normal;
         display: block;
-        margin-left: auto;
+        /* margin-left: auto; */
     }
 
     .adress-list {
@@ -223,7 +227,8 @@ img {
 @media screen and (min-width: 1158px) {
     .header-container {
         margin: 0 auto;
-        padding: 0 15px;
+        padding-left: 15px;
+        padding-right: 15px;
         justify-content: space-between;
     }
 
@@ -233,11 +238,6 @@ img {
 
     .header-logo {
         margin-right: 76px;
-    }
-
-    .adress {
-        margin-left: auto;
-        margin-right: 0;
     }
 
     .adress-list {
